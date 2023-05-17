@@ -94,14 +94,47 @@ public class NumeryczneCalkowanie {
 
         for (int j = 1; j < i - 1; j++) {
 
-            if (j % 2 == 0) {
-                suma += 2 * listaPunktow.get(j).getY() * h;
-            } else {
-                suma += 4 * listaPunktow.get(j).getY() * h;
+            if(i%2==0) {
+                if (j<=(i/2)) {
+                    if (j % 2 == 0) {
+                        suma += 2 * listaPunktow.get(j).getY();
+                       // System.out.println("2 * " + listaPunktow.get(j).getY());
+                    } else {
+                        suma += 4 * listaPunktow.get(j).getY();
+                        //System.out.println("4 * " + listaPunktow.get(j).getY());
+                    }
+                } else {
+                    if (j % 2 == 0) {
+                        suma += 2 * listaPunktow.get(j).getY();
+                        //System.out.println("2 * " + listaPunktow.get(j).getY());
+                    } else {
+                        suma += 4 * listaPunktow.get(j).getY();
+                        //System.out.println("4 * " + listaPunktow.get(j).getY());
+                    }
+                }
+            }
+            else {
+                if (j<(i/2)) {
+                    if (j % 2 == 0) {
+                        suma += 2 * listaPunktow.get(j).getY();
+                        //System.out.println("2 * " + listaPunktow.get(j).getY());
+                    } else {
+                        suma += 4 * listaPunktow.get(j).getY();
+                        //System.out.println("4 * " + listaPunktow.get(j).getY());
+                    }
+                } else {
+                    if (j % 2 == 0) {
+                        suma += 2 * listaPunktow.get(j).getY();
+                        //System.out.println("2 * " + listaPunktow.get(j).getY());
+                    } else {
+                        suma += 4 * listaPunktow.get(j).getY();
+                        //System.out.println("4 * " + listaPunktow.get(j).getY());
+                    }
+                }
             }
         }
 
-        suma += (listaPunktow.get(0).getY() + listaPunktow.get(i - 1).getY()) * h / 3;
+        suma = (suma + listaPunktow.get(0).getY() + listaPunktow.get(i - 1).getY()) * h / 3;
 
         System.out.println("Całka metodą Simpsona: " + suma);
     }
